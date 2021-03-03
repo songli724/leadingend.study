@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 字符串会牵涉到动态部分
+    let person = {
+        name: '我',
+        action: '走'
+    };
+    let address = person.name + '正在往东' + person.action;
+    console.log(address);
+    let address1 = `${person.name}正在往东${person.action}`;
+    console.log(address1);
+
+</script>
+</body>
+</html>
