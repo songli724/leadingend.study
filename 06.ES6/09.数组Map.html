@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    let arr = [1, 2, 3, 4, 5, 6]
+    // 传统的方式
+    let newarr = [];
+    for (let i = 0; i < arr.length; i++) {
+        newarr.push(arr[i])
+    }
+    console.log(newarr)
+
+    // map
+    let arr2 = arr.map(function (ele) {
+        return ele
+    })
+    console.log(arr2)
+
+
+</script>
+
+</body>
+</html>
