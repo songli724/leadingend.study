@@ -30,7 +30,7 @@
         就类似于maven中的pom.xml一个含义，记录作用：复用
         1：package.json记录的依赖模块 通过npm install 全部拉取到本地。
     2-5:如果安装模块很慢怎么?
-        npm install -g cnpm --registry=https: / /registry.npm.taobao.org
+        npm install -g cnpm --registry=https://registry.npm.taobao.org
     2-6:如何运行?
         node xxxx.js 运行过程.js是可以省去的   终止命令行:CTRL +C
     2-7:如何下载多个?

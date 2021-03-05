@@ -1,0 +1,1 @@
+(()=>{var o={648:(o,r)=>{r.info=function(o){console.log(o),document.write(o)}},555:(o,r)=>{r.add=(o,r)=>o+r}},r={};function n(t){if(r[t])return r[t].exports;var e=r[t]={exports:{}};return o[t](e,e.exports,n),e.exports}(()=>{const o=n(648),r=n(555);o.info("hello world"+r.add(100,200))})()})();
