@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+
+<div id="app" v-cloak>
+    <todo>
+        <todo-title slot="todo-title" :title="title"></todo-title>
+        <todo-items slot="todo-items" v-for="(item,index) in todoItems"
+                    :item="item" :index="index" @自定义="removeItems(index)"></todo-items>
+    </todo>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js "></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    // slot:插槽
+    Vue.component("todo", {
+        template: '<div>\
+                        <slot name="todo-title"></slot>\
+                        <ul>\
+                             <slot name="todo-items"></slot>\
+                        </ul>\
+                    </div>'
+    })
+
+    Vue.component("todo-title", {
+        props: ["title"],
+        template: '<div>{{title}}</div>'
+    })
+    Vue.component("todo-items", {
+        props: ["item", "index"],
+        // 只能绑定当前组件的方法
+        template: '<li>{{index}}--{{item}}<button @click="remove">删除</button></li>',
+        methods: {
+            remove: function (index) {
+                // 绑定前端（视图）的自定义事件 this.$emit
+                this.$emit('自定义', index);
+            }
+        }
+    })
+
+
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            title: '利利的书架',
+            todoItems: ['亚索', '奶妈', '盲僧', '诺手']
+        },
+        methods: {
+            removeItems: function (index) {
+                // 删除数组指定下标的元素
+                this.todoItems.splice(index, 1)
+            }
+        }
+    })
+</script>
+
+</body>
+</html>
