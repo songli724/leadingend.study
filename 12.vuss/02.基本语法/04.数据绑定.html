@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    文本输入框<input type="text" v-model="message">
+    文本输入框<textarea cols="60" rows="30" v-model="message"></textarea>
+    <span>
+        {{message}}
+    </span>
+    男<input type="radio" name="sex" value="男" v-model="sl">
+    女<input type="radio" name="sex" value="女" v-model="sl">
+    <p>
+        选中了谁：{{sl}}
+    </p>
+    <br>
+    下拉框
+    <select v-model="selected">
+        <option value="" disabled>--请选择--</option>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+        <option>D</option>
+    </select>
+    <p>
+        选中了谁：{{selected}}
+    </p>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data(){
+            return {
+                message: "你好",
+                sl: '',
+                selected: ''
+            }
+        },
+        methods: {
+            sayHi: function () {
+                alert(this.message)
+            }
+        }
+    })
+</script>
+</body>
+</html>
